@@ -1,0 +1,8 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^tripzi\.ca$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.tripzi\.ca$
+RewriteRule ^/?$ "https\:\/\/tripzi\.ca\/" [R=301,L]
+
